@@ -2,26 +2,17 @@ import React from 'react';
 
 import './TodoItem.styles.css'
 
-function TodoItem(props) {
-  const [state, setState] = React.useState(true)
-
-  const TodoCompleted = () => (
-    setState(true)
-  )
-  const TodoDeleted = () => (
-    console.log('deleted')
-  )
-
+function TodoItem({ text, completeTodo, deleteTodo }) {
   return (
     <li className="TodoItem">
-      <span onClick={TodoCompleted}>
+      <span onClick={completeTodo}>
         ✅
       </span>
       <p className="TodoItem-p">
-        {props.text}
+        {text}
       </p>
       <span
-        onClick={TodoDeleted}>
+        onClick={deleteTodo}>
         ❌
       </span>
     </li>
