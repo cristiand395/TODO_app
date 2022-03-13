@@ -1,20 +1,23 @@
 import React from 'react';
+import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
 
 import './TodoItem.styles.css'
 
-function TodoItem({ text, completeTodo, deleteTodo }) {
+function TodoItem(props) {
   return (
     <li className="TodoItem">
-      <span onClick={completeTodo}>
-        ✅
-      </span>
+      <AiFillCheckCircle
+        onClick={props.onComplete}
+        style={{color: '#806afc', fontSize: '35px'}}
+        placeholder='Done'
+        title="Done"/>
       <p className="TodoItem-p">
-        {text}
+        {props.text}
       </p>
-      <span
-        onClick={deleteTodo}>
-        ❌
-      </span>
+      <AiFillCloseCircle 
+        onClick={props.onDelete} 
+        style={{color: '#f85a5a', fontSize: '35px'}}
+        title='Delete'/>
     </li>
   )
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { Context } from '../../Context'
 import './CreateTodoButton.styles.css'
 
 function CreateTodoButton(props) {
+  const {setOpenModal} = React.useContext(Context)
   return (
     <button 
       className="CreateTodoButton"
-      onClick={()=> console.log('clikeoso')}>
+      onClick={() => setOpenModal(true)}>
       +
     </button>
   )
