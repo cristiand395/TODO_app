@@ -5,12 +5,12 @@ import './DoneTodo.styles.css';
 
 function DoneTodos() {
   const {
-    doneTodos
+    doneTodosList
   } = React.useContext(Context)
   return (
     <ul>
-      {doneTodos.map(doneTodo => (
-        <li>{doneTodo.text}</li>
+      {doneTodosList.map(doneTodo => (
+        <li>{doneTodo}</li>
       ))
       }
     </ul>

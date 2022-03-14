@@ -16,7 +16,8 @@ function Provider(props) {
   const totalTodos = todos.length;
 
   let searchedTodos = [];
-  let doneTodos = [];
+  let doneTodosList = [];
+
 
   if (!searchValue.length >= 1) {
     searchedTodos = todos;
@@ -32,9 +33,7 @@ function Provider(props) {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = true;
-    doneTodos.push(text)
-    saveTodos(newTodos);
-    console.log(newTodos);
+    saveTodos(newTodos)
   };
 
   const deleteTodo = (text) => {
@@ -70,7 +69,7 @@ function Provider(props) {
       openModal,
       setOpenModal,
       addTodo,
-      doneTodos
+      doneTodosList,
     }}>
       {props.children}
     </Context.Provider>

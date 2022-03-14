@@ -11,7 +11,7 @@ function TodoItem(props) {
         style={{color: '#806afc', fontSize: '35px'}}
         placeholder='Done'
         title="Done"/>
-      <p className="TodoItem-p">
+      <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
         {props.text}
       </p>
       <AiFillCloseCircle 

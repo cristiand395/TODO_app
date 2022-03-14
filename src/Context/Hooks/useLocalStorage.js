@@ -1,9 +1,10 @@
 import React from 'react';
 
-function useLocalStorage(itemName, initialValue) {
+function useLocalStorage(itemName, initialValue, ) {
   const [error, setError] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
   const [item, setItem] = React.useState(initialValue);
+  const [doneTodos, setDoneTodos] = React.useState(initialValue)
   
   React.useEffect(() => {
     setTimeout(() => {
@@ -25,6 +26,7 @@ function useLocalStorage(itemName, initialValue) {
       }
     }, 1000);
   });
+
   
   const saveItem = (newItem) => {
     try {
@@ -36,11 +38,21 @@ function useLocalStorage(itemName, initialValue) {
     }
   };
 
+  const saveDoneTodo = (text) => {
+    try {
+      setDoneTodos(text);
+    } catch(error) {
+      setError(error);
+    }
+  }
+
   return {
     item,
     saveItem,
     loading,
     error,
+    doneTodos,
+    saveDoneTodo,
   };
 }
 

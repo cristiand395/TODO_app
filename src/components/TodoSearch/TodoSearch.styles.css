@@ -2,7 +2,7 @@
   background: #F9FBFC;
   border-radius: 15px;
   border: none;
-  margin: 10px 24px;
+  margin: 10px 0px;
   height: 64px;
   width: calc(100% - 62px);
   font-size: 24px;
@@ -12,6 +12,7 @@
   color: #2d2d2e;
   box-shadow: 0px 1px 15px #b8b8ff;
   margin-bottom: 25px;
+  align-items: center;
 }
 
 .TodoSearch::placeholder {
